@@ -1,0 +1,52 @@
+{
+  "name": "bolt-sms",
+  "version": "0.1.0",
+  "description": "SMS plugin for bolt slack bot based on bolt-remote",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "grunt"
+    }
+  },
+  "keywords": [
+    "bolt",
+    "bot",
+    "slack",
+    "slack-bot",
+    "plugin"
+  ],
+  "files": [
+    "build"
+  ],
+  "author": "Mohamad Jahani <m4m4lj@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slack-bolt/bolt-sms"
+  },
+  "bugs": {
+    "url": "https://github.com/slack-bolt/bolt-sms/issues"
+  },
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-eslint": "6.0.2",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "eslint": "2.7.0",
+    "eslint-config-airbnb": "6.2.0",
+    "ghooks": "1.2.0",
+    "grunt": "1.0.1",
+    "grunt-babel": "6.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-eslint": "^18.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.9.0",
+    "bolt-remote": "^0.1.5"
+  }
+}
