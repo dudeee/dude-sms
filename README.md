@@ -11,7 +11,8 @@ First install Bolt and make it work. Then use `npm` and install it:
 npm install --save bolt-sms
 ```
 
-_ note that you should config both this plugin and bolt-remote in order to make it work. _
+*note that you should config both this plugin and bolt-remote in order to make it work.*
+
 
 ## Setup
 
