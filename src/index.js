@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import { defaultsDeep } from 'lodash';
 
 
@@ -15,7 +16,7 @@ const DEFAULT_CONFIG = {
   modifier: msg => msg
 };
 
-export default async bot => {
+export default bot => {
   if (!bot.remote) {
     throw new Error('Remote server instance object not found');
   }
@@ -35,13 +36,13 @@ export default async bot => {
     // Temporary message object may change in modifier call
     let tempMessageObject = {
       from: params[fromKey],
-      to: params[messageKey]
+      message: params[messageKey]
     };
 
     // Only let the validated messages pass
     if (validator) {
       if (!validator(tempMessageObject)) {
-        return res.send(403);
+        return res.sendStatus(403);
       }
     }
 
@@ -52,12 +53,12 @@ export default async bot => {
 
     const { from, message } = tempMessageObject;
 
-
     const slackUser = bot.users.find(user =>
       // skip if user has no phone number in slack
       user.profile.phone && user.profile.phone.replace(/\+98/, '0') === from
     );
 
+    // if there is no user with that phone in our slack it's 404
     if (!slackUser) {
       return res.sendStatus(404);
     }
@@ -78,8 +79,10 @@ export default async bot => {
       channel: im
     };
     bot.inject('message', event);
-    res.sendStatus(200);
+    res.status(200).send(event);
 
     return next();
   });
+
+  return bot;
 };
