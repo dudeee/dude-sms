@@ -9,7 +9,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "test"
+      "pre-commit": "npm test"
     }
   },
   "keywords": [
