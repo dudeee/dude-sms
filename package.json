@@ -1,6 +1,6 @@
 {
   "name": "bolt-sms",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "SMS plugin for bolt slack bot based on bolt-remote",
   "main": "build/index.js",
   "scripts": {
@@ -50,7 +50,6 @@
     "supertest": "^1.2.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.7.4",
     "bolt-remote": "^0.2.9",
     "lodash": "^4.9.0"
   }
