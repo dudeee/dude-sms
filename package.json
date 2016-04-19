@@ -1,6 +1,6 @@
 {
   "name": "bolt-sms",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "SMS plugin for bolt slack bot based on bolt-remote",
   "main": "build/index.js",
   "scripts": {
