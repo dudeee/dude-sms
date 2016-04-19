@@ -81,25 +81,25 @@ This plugin only needs some configuration in your Bolt `config.js` file. You can
   }
   ```
 
-  * **responseHandler**: A function that will be called before bot sends user response back to the user in slack. You can use this function to send the user SMS or some other additional message. The object passed to this function looks like this:
+* **responseHandler**: A function that will be called before bot sends user response back to the user in slack. You can use this function to send the user SMS or some other additional message. The object passed to this function looks like this:
+
+```js
+{
+  text: 'Some messsage text', // our slack bot response that he'll send to user in react to the message came
+  phone: '09309999999', // sms sender phone number
+  user: 'U123456', // some Slack user id
+  channel: 'D654321' // user channel id that can be used to send additional message
+}
+```
+
+  *example*:
 
   ```js
-  {
-    text: 'Some messsage text', // our slack bot response that he'll send to user in react to the message came
-    phone: '09309999999', // sms sender phone number
-    user: 'U123456', // some Slack user id
-    channel: 'D654321' // user channel id that can be used to send additional message
+  myBot.config.sms.responseHandler = msg => {
+    const { text, phone } = msg;
+    // do something with phone and sms with your own functions like sendSMS(phone, text) or etc.
   }
   ```
-
-    *example*:
-
-    ```js
-    myBot.config.sms.responseHandler = msg => {
-      const { text, phone } = msg;
-      // do something with phone and sms with your own functions like sendSMS(phone, text) or etc.
-    }
-    ```
 
 
 ## Contribution
