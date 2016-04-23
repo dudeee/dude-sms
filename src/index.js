@@ -55,7 +55,7 @@ export default bot => {
 
     const slackUser = bot.users.find(user =>
       // Skip if user has no phone number in slack
-      user.profile.phone && user.profile.phone.replace(/\+98/, '0') === from
+      user.profile.phone && user.profile.phone === from
     );
 
     // If there is no user with that phone in our slack it's 404
