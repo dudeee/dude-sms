@@ -1,7 +1,7 @@
 {
-  "name": "bolt-sms",
-  "version": "0.3.6",
-  "description": "SMS plugin for bolt slack bot based on bolt-remote",
+  "name": "dude-sms",
+  "version": "0.3.7",
+  "description": "SMS plugin for dude",
   "main": "build/index.js",
   "scripts": {
     "build": "grunt",
