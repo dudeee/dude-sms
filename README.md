@@ -1,24 +1,24 @@
-# bolt-sms
+# dude-sms
 
-`bolt-sms` is a sms control plugin for [Bolt](https://github.com/slack-bolt/bolt) slack bot based on [bolt-remote](https://github.com/slack-bolt/bolt-remote) plugin. You can use this plugin to pass the commands from outside with a sms provider to your slack bot.
+`dude-sms` is a sms control plugin for [dude](https://github.com/slack-dude/dude) slack bot based on [dude-remote](https://github.com/slack-dude/dude-remote) plugin. You can use this plugin to pass the commands from outside with a sms provider to your slack bot.
 
 
 ## Installation
 
-First install Bolt and make it work. Then use `npm` and install it:
+First install dude and make it work. Then use `npm` and install it:
 
 ```bash
-npm install --save bolt-sms
+npm install --save dude-sms
 ```
 
-*note that you should config both this plugin and bolt-remote in order to make it work.*
+*note that you should config both this plugin and dude-remote in order to make it work.*
 
 
 ## Setup
 
-Bolt knows the plugins by their package name prefix. It's loading all `bolt-*` modules as plugin and pass them a Bolt instance. They can modify the bot or do anything else with the instance.
+dude knows the plugins by their package name prefix. It's loading all `dude-*` modules as plugin and pass them a dude instance. They can modify the bot or do anything else with the instance.
 
-This plugin only needs some configuration in your Bolt `config.js` file. You can modify the config in the runtime by editing your bot `.config.sms` property. It's usefull for `validator` and `modifier` config key which we'll mention below. The config properties are:
+This plugin only needs some configuration in your dude `config.js` file. You can modify the config in the runtime by editing your bot `.config.sms` property. It's usefull for `validator` and `modifier` config key which we'll mention below. The config properties are:
 
 ```js
 {

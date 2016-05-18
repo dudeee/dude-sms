@@ -9,7 +9,7 @@ const DEFAULT_CONFIG = {
   params: {
     from: 'from',
     to: 'to',
-    message: 'message'
+    message: 'message',
   },
   validator: msg => true, // eslint-disable-line
   modifier: msg => msg,
@@ -36,7 +36,7 @@ export default bot => {
     // Temporary message object may change in modifier call
     let tempMessageObject = {
       from: params[fromKey],
-      message: params[messageKey]
+      message: params[messageKey],
     };
 
     // Only let the validated messages pass
@@ -76,7 +76,7 @@ export default bot => {
     const event = {
       text: message,
       user: id,
-      channel: im
+      channel: im,
     };
 
     if (responseHandler) {
@@ -93,7 +93,7 @@ export default bot => {
           text,
           phone: from,
           user: event.id,
-          channel: event.im
+          channel: event.im,
         };
 
         // Call handler with responseData

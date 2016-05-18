@@ -8,12 +8,12 @@ const config = {
   remote: {
     server: {
       hostname: '127.0.0.1',
-      port: 3000
+      port: 3000,
     },
     auth: {
       key: 'token',
-      value: '123'
-    }
+      value: '123',
+    },
   },
   sms: {
     request: {
@@ -23,15 +23,15 @@ const config = {
     params: {
       from: 'from',
       to: 'to',
-      message: 'text'
+      message: 'text',
     },
     validator: msg =>
       msg.message === 'valid' || msg.from === '+989999999999',
     modifier: msg => {
       const message = `ADMIN: ${msg.message}`;
       return { from: msg.from, message };
-    }
-  }
+    },
+  },
 };
 
 const users = [
@@ -39,22 +39,22 @@ const users = [
     id: 102030,
     profile: {
       phone: '+989999999999',
-    }
+    },
   },
   {
     profile: {},
-  }
+  },
 ];
 
 const ims = [
   {
     user: 102030,
-    id: 'U102030'
+    id: 'U102030',
   },
   {
     user: 102040,
-    id: 'U102040'
-  }
+    id: 'U102040',
+  },
 ];
 
 describe('bolt-sms', () => {
@@ -64,7 +64,7 @@ describe('bolt-sms', () => {
       config,
       users,
       ims,
-      inject: () => true
+      inject: () => true,
     };
     bot = remote(bot);
     bot = sms(bot);
@@ -96,7 +96,7 @@ describe('bolt-sms', () => {
         .expect(200, {
           text: 'ADMIN: valid',
           user: users[0].id,
-          channel: ims[0].id
+          channel: ims[0].id,
         }, done);
     });
   });
