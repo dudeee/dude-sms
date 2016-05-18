@@ -1,6 +1,6 @@
 {
   "name": "dude-sms",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "SMS plugin for dude",
   "main": "build/index.js",
   "scripts": {
