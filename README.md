@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dudeee/dude-sms.svg?branch=master)](https://travis-ci.org/dudeee/dude-sms)
+[![npm version](https://badge.fury.io/js/dude-sms.svg)](https://badge.fury.io/js/dude-sms)
 # dude-sms
 
 `dude-sms` is a sms control plugin for [dude](https://github.com/dudeee/dude) slack bot based on [dude-remote](https://github.com/dudeee/dude-remote) plugin. You can use this plugin to pass the commands from outside with a sms provider to your slack bot.
