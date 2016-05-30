@@ -1,3 +1,6 @@
+if (!global._babelPolyfill) {
+  require('babel-polyfill');
+}
 import { defaultsDeep } from 'lodash';
 
 
@@ -13,7 +16,7 @@ const DEFAULT_CONFIG = {
   },
   validator: msg => true, // eslint-disable-line
   modifier: msg => msg,
-  responseHandler: msg => null // eslint-disable-line
+  responseHandler: null // eslint-disable-line
 };
 
 export default bot => {

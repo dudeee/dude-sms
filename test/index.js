@@ -26,7 +26,7 @@ const config = {
       message: 'text',
     },
     validator: msg =>
-      msg.message === 'valid' || msg.from === '+989999999999',
+      msg.message === 'valid' || msg.from === '989999999999',
     modifier: msg => {
       const message = `ADMIN: ${msg.message}`;
       return { from: msg.from, message };
@@ -38,7 +38,7 @@ const users = [
   {
     id: 102030,
     profile: {
-      phone: '+989999999999',
+      phone: '989999999999',
     },
   },
   {
@@ -64,7 +64,7 @@ describe('dude-sms', () => {
       config,
       users,
       ims,
-      inject: () => true,
+      inject() {},
     };
     bot = remote(bot);
     bot = sms(bot);
@@ -80,19 +80,19 @@ describe('dude-sms', () => {
 
     it('shoud return 403 for invalid requests that doesn\'t pass by validator', done => {
       request(bot.remote)
-        .get(`${config.sms.request.path}?${config.remote.auth.key}=${config.remote.auth.value}&from=${bot.users[0].profile.phone.replace(/\+98/, '0')}`) // eslint-disable-line
+        .get(`${config.sms.request.path}?${config.remote.auth.key}=${config.remote.auth.value}&from=${bot.users[0].profile.phone.replace(/98/, '0')}`) // eslint-disable-line
         .expect(403, done);
     });
 
     it('should return 200 status for valid & right requests', done => {
       request(bot.remote)
-        .get(`${config.sms.request.path}?${config.remote.auth.key}=${config.remote.auth.value}&from=${bot.users[0].profile.phone.replace(/\+98/, '0')}&${config.sms.params.message}=valid`) // eslint-disable-line
+        .get(`${config.sms.request.path}?${config.remote.auth.key}=${config.remote.auth.value}&from=${bot.users[0].profile.phone}&${config.sms.params.message}=valid`) // eslint-disable-line
         .expect(200, done);
     });
 
     it('should have working modifiers that can modify the message as expected', done => {
       request(bot.remote)
-        .get(`${config.sms.request.path}?${config.remote.auth.key}=${config.remote.auth.value}&from=${bot.users[0].profile.phone.replace(/\+98/, '0')}&${config.sms.params.message}=valid`) // eslint-disable-line
+        .get(`${config.sms.request.path}?${config.remote.auth.key}=${config.remote.auth.value}&from=${bot.users[0].profile.phone}&${config.sms.params.message}=valid`) // eslint-disable-line
         .expect(200, {
           text: 'ADMIN: valid',
           user: users[0].id,
