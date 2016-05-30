@@ -1,6 +1,6 @@
 # dude-sms
 
-`dude-sms` is a sms control plugin for [dude](https://github.com/slack-dude/dude) slack bot based on [dude-remote](https://github.com/slack-dude/dude-remote) plugin. You can use this plugin to pass the commands from outside with a sms provider to your slack bot.
+`dude-sms` is a sms control plugin for [dude](https://github.com/dudeee/dude) slack bot based on [dude-remote](https://github.com/dudeee/dude-remote) plugin. You can use this plugin to pass the commands from outside with a sms provider to your slack bot.
 
 
 ## Installation
@@ -18,7 +18,7 @@ npm install --save dude-sms
 
 dude knows the plugins by their package name prefix. It's loading all `dude-*` modules as plugin and pass them a dude instance. They can modify the bot or do anything else with the instance.
 
-This plugin only needs some configuration in your dude `config.js` file. You can modify the config in the runtime by editing your bot `.config.sms` property. It's usefull for `validator` and `modifier` config key which we'll mention below. The config properties are:
+This plugin only needs some configuration in your dude `config.js` file. You can modify the config in the runtime by editing your bot `.config.sms` property. It's useful for `validator` and `modifier` config keys which we'll mention below. The config properties are:
 
 ```js
 {

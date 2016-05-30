@@ -1,6 +1,6 @@
 // import { expect } from 'chai';
 import request from 'supertest';
-import remote from 'bolt-remote';
+import remote from 'dude-remote';
 import sms from '../build';
 
 const LONG_TIMEOUT = 5000;
@@ -57,7 +57,7 @@ const ims = [
   },
 ];
 
-describe('bolt-sms', () => {
+describe('dude-sms', () => {
   let bot;
   before(() => {
     bot = {
