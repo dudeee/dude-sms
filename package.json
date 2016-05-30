@@ -1,6 +1,6 @@
 {
   "name": "dude-sms",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "SMS plugin for dude",
   "main": "build/index.js",
   "scripts": {
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "babel": "6.5.2",
+    "babel-core": "^6.9.1",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
